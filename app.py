@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, render_template
 import requests
 import os
 app = Flask(__name__)
@@ -9,6 +9,10 @@ KEY = os.environ['KEY']
 # @app.route('/geoid', methods=['GET'])
 # def get_data():
 #     return jsonify(data)
+
+@app.route("/",methods=['GET'])
+def main_page():
+    return render_template("index.html")
 
 # 路由：根据 ID 获取单个数据
 @app.route('/geoid/<string:city_name>', methods=['GET'])
@@ -73,4 +77,4 @@ def internal_error(error):
     return jsonify({"error": "Internal server error"}), 500
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", debug=False)
+    app.run(debug=True)

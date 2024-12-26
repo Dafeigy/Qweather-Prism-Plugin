@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+
+@font-face{
+    font-family: Potra;
+    src: url("../fonts/DepartureMono-Regular.woff");
+}
+
+
+.title{
+    width: 100vw;
+    height: 12vh;
+    justify-items: center;
+    transition: all .8s;
+    /* background-color: #fff; */
+    margin-top: 20vh;
+    /* width: 10%;
+    height: 12%; */
+    border-radius: 25px;
+    opacity: 0.2;
+    
+}
+
+.title:hover{
+    cursor: pointer;
+    color: black;
+    opacity: 0.9;
+}
+
+
+
+.title p{
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+    z-index: 2;
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+    font-size: 52px;
+    letter-spacing: .2em;
+    padding-left: 1em;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 1.;
+    font-family: Potra;
+}
+
+#banner{
+    margin: 0 auto;
+    margin-top: 7vh;
+    background-color: rgba(44, 44, 44,0.8);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#banner>div{
+    display: flex;
+    width: 10vw;
+    height: 4vh;
+    opacity: 0.5;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 1px;
+    transition: all .5s;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    opacity: 1.;
+    user-select: none;
+    font-family: Potra;
+}
+
+#banner>div:hover{
+    opacity: 1;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+}
+.about{
+    background-color: rgb(116,109,220);
+}
+
+.demo{
+    margin-left: 2vw;
+}
+#pixel{
+    font-family: Potra;
+    color: white;
+}
+.info{
+    /* color: black; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50vh;
+    width: 100vw;
+    height: 5vh;
+    opacity: 80%;
+    border-radius: 25px;
+    user-select: none;
+}
+
+.info p{
+    color:white;
+    font-size: small;
+}
+
+
+.info a{
+    font-family: YaHei;
+    z-index: 2;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    /* padding-left: 1em; */
+    font-size: small;
+    color: #fff;
+    opacity: 1.;
+    font-weight: normal;
+    text-decoration: none;
+    font-family: Yahei;
+    margin: 1em;
+}
