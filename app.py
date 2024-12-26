@@ -1,8 +1,8 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 import requests
 import os
 app = Flask(__name__)
-
+app.config['JSON_AS_ASCII'] = False
 KEY = os.environ['KEY']
 
 # # 路由：获取所有数据
@@ -15,19 +15,21 @@ def main_page():
     return render_template("index.html")
 
 # 路由：根据 ID 获取单个数据
-@app.route('/geoid/<string:city_name>', methods=['GET'])
-def get_single_data(city_name):
-    geo_url = f"https://geoapi.qweather.com/v2/city/lookup?location={city_name}&key={KEY}"
-    req = requests.get(geo_url)
-    # print(req.json())
-    res = req.json()
-    if res['code'] == "200":
-        city_id = res['location'][0]['id']
-        return city_id
-    else:
-        return jsonify({"error": "Not found"}),404
-@app.route("/qweather/<string:city_name>", methods = ['GET'])
-def get_weather_data(city_name):
+# @app.route('/geoid/<string:city_name>', methods=['GET'])
+# def get_single_data(city_name):
+#     geo_url = f"https://geoapi.qweather.com/v2/city/lookup?location={city_name}&key={KEY}"
+#     req = requests.get(geo_url)
+#     # print(req.json())
+#     res = req.json()
+#     if res['code'] == "200":
+#         city_id = res['location'][0]['id']
+#         return city_id
+#     else:
+#         return jsonify({"error": "Not found"}),404
+@app.route("/qweather", methods = ['GET'])
+def get_weather_data():
+    city_name = request.args.get("city_name")
+    print(city_name.encode().decode())
     geo_url = f"https://geoapi.qweather.com/v2/city/lookup?location={city_name}&key={KEY}"
     req = requests.get(geo_url)
     # print(req.json())
