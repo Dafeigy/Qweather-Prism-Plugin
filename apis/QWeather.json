@@ -13,7 +13,7 @@
   "paths": {
     "/qweather": {
       "get": {
-        "operationId": "GetWeather",
+        "operationId": "使用@和风天气查询",
         "description": "请求和风天气API并获得{{city_name}}的实时天气数据",
         "deprecated": false,
         "parameters": [
@@ -25,7 +25,7 @@
             "schema": {
               "type": "string"
             }
-          },
+          }
         ]
       }
     }
